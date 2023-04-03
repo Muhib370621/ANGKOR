@@ -1,0 +1,22 @@
+<svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_1_5680)">
+<path d="M1.25086 12.5371V12.3181C1.28286 11.6702 1.49086 11.0425 1.85186 10.4996C2.45486 9.8475 2.86686 9.0483 3.04586 8.186C3.04586 7.5195 3.04586 6.8435 3.10386 6.177C3.40486 2.9684 6.57686 0.75 9.71086 0.75H9.78886C12.9219 0.75 16.0949 2.9684 16.4059 6.177C16.4639 6.8435 16.4059 7.5195 16.4539 8.186C16.6349 9.0503 17.0469 9.8519 17.6469 10.5091C18.0119 11.0472 18.2199 11.6727 18.2489 12.3181V12.5276C18.2709 13.398 17.9709 14.2468 17.4049 14.9174C16.6569 15.7015 15.6419 16.1893 14.5519 16.2884C11.3569 16.6312 8.13286 16.6312 4.93786 16.2884C3.84886 16.185 2.83586 15.6979 2.08486 14.9174C1.52786 14.2463 1.23186 13.4026 1.25086 12.5371Z" stroke="#DC9F42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g filter="url(#filter1_b_1_5680)">
+<path d="M7.30469 19.6016C7.80369 20.2282 8.53669 20.6338 9.34169 20.7285C10.1467 20.8232 10.9567 20.5993 11.5927 20.1062C11.7887 19.9604 11.9647 19.7908 12.1167 19.6016" stroke="#DC9F42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_b_1_5680" x="-9.5" y="-10" width="38.5" height="37.2954" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="5"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_5680"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_5680" result="shape"/>
+</filter>
+<filter id="filter1_b_1_5680" x="-3.44531" y="8.85156" width="26.312" height="22.6479" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="5"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_5680"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_5680" result="shape"/>
+</filter>
+</defs>
+</svg>
