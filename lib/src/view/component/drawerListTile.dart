@@ -27,12 +27,12 @@ class DrawerListTile extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 10.w,
+          width: 6.w,
         ),
         Text(
           title,
           style: TextStyle(
-            fontSize: 18.sp,
+            fontSize: 17.sp,
             color: AppColors.pureWhite,
           ),
         )

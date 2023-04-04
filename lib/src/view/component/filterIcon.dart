@@ -34,7 +34,7 @@ class FilterIcon extends StatelessWidget {
             filterText,
             style: TextStyle(
               color: AppColors.mainColor,
-              fontSize: 19.sp,
+              fontSize: 17.8.sp,
             ),
           ),
         ),

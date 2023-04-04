@@ -1,10 +1,9 @@
 class RouteNames{
   RouteNames._();
-  // static const appLoader = '/appLoader';
-  // static const homeScreen = '/homeScreen';
-  // static const loginScreen = '/loginScreen';
-  // static const customerNumberEntry = '/customerNumberEntry';
-  // static const pinCodeEntry = '/pinCodeEntry';
+  static const appLoader = '/appLoader';
+  static const loginScreen = '/loginScreen';
+  static const signUpScreen = '/signUpScreen';
+  static const otpVerificationScreen = '/otpVerificationScreen';
   static const bottomNav = '/bottomNav';
 
 

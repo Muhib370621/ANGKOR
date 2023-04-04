@@ -7,6 +7,8 @@ class AppAssets{
   ///~~~~~~~~~~logos~~~~~~~~~~~~///
   static const angkorLogo = "$_imagesPath/angkorLogo.png";
   static const angkorLogoSvg = "$_iconPath/angkorLogo.svg";
+  static const angkorSplashIcon = "$_iconPath/angkorSplash.png";
+
 
   ///~~~~~~~~~~images~~~~~~~~~~~~///
   static const background = "$_imagesPath/background.png";
@@ -25,4 +27,9 @@ class AppAssets{
   static const genReportIcon = "$_iconPath/genReport.svg";
   static const settingIcon = "$_iconPath/setting.svg";
   static const helpIcon = "$_iconPath/help.svg";
+  static const emailIcon = "$_iconPath/emailIcon.svg";
+  static const facebookIcon = "$_iconPath/fbIcon.svg";
+  static const instaIcon = "$_iconPath/instaIcon.svg";
+  static const googleIcon = "$_iconPath/googleIcon.svg";
+  static const otpCodeIcon = "$_iconPath/otpCode.svg";
 }

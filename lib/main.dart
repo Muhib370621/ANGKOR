@@ -1,3 +1,4 @@
+import 'package:angkor/src/view/screen/onBoarding/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -28,9 +29,9 @@ class MyApp extends StatelessWidget {
             fontFamily: "urbanist"
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: RouteNames.bottomNav,
+        initialRoute: RouteNames.appLoader,
         getPages: AppRoutes.routes,
-        home: const DashBoard(),
+        home: const LoginScreen(),
       );
     });
   }

@@ -12,7 +12,7 @@ class AngkorDrawer extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.mainBlackColor,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(
@@ -21,7 +21,7 @@ class AngkorDrawer extends StatelessWidget {
           ),
         ),
         height: 60.h,
-        width: 55.w,
+        width: 58.w,
         child: Drawer(
           backgroundColor: AppColors.mainGreyColor,
           child: Column(
