@@ -5,14 +5,23 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../core/utils/appColors.dart';
 
 class CustomIconContainer extends StatelessWidget {
-  const CustomIconContainer({Key? key, required this.svgPath}) : super(key: key);
+  const CustomIconContainer(
+      {Key? key,
+      required this.svgPath,
+      required this.height,
+      required this.width,
+      this.svgColor})
+      : super(key: key);
   final String svgPath;
+  final double height;
+  final double width;
+  final Color? svgColor;
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      height: 5.7.h,
-      width: 10.5.w,
+    return Container(
+      height: height,
+      width: width,
       decoration: const BoxDecoration(
         color: AppColors.mainBlackColor,
         borderRadius: BorderRadius.all(
@@ -24,6 +33,7 @@ class CustomIconContainer extends StatelessWidget {
       child: SvgPicture.asset(
         svgPath,
         fit: BoxFit.scaleDown,
+        color: svgColor,
         // height: 0.5.h,
         // width: 5,
       ),

@@ -10,4 +10,15 @@ class AppTextStyles{
     color: AppColors.pureWhite,
   );
 
+  static  TextStyle tableHeader = TextStyle(
+    fontSize: 18.sp,
+    color: AppColors.pureWhite,
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle tableListTiles=TextStyle(
+  fontSize: 16.5.sp,
+  color: AppColors.pureWhite,
+  fontWeight: FontWeight.w500,
+  );
+
 }

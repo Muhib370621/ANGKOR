@@ -17,23 +17,25 @@ class FilterIcon extends StatelessWidget {
         width: 28.w,
         decoration: BoxDecoration(
           color:
-              isActive == true ? AppColors.mainBlackColor : Colors.transparent,
+              isActive == true ? AppColors.mainColor : Colors.transparent,
           borderRadius: const BorderRadius.all(
             Radius.circular(
               25,
             ),
           ),
           border: Border.all(
-            color: isActive == true
-                ? AppColors.mainBlackColor
-                : AppColors.mainColor,
+            color:
+            // isActive == true
+            //     ? AppColors.mainBlackColor
+            //     :
+            AppColors.mainColor,
           ),
         ),
         child: Center(
           child: Text(
             filterText,
             style: TextStyle(
-              color: AppColors.mainColor,
+              color: isActive==true?AppColors.mainBlackColor:AppColors.mainColor,
               fontSize: 17.8.sp,
             ),
           ),

@@ -32,4 +32,9 @@ class AppAssets{
   static const instaIcon = "$_iconPath/instaIcon.svg";
   static const googleIcon = "$_iconPath/googleIcon.svg";
   static const otpCodeIcon = "$_iconPath/otpCode.svg";
+  static const searchIcon = "$_iconPath/searchIcon.svg";
+  static const filterIcon = "$_iconPath/filterIcon.svg";
+  static const backIcon = "$_iconPath/backIcon.svg";
+  static const commentIcon = "$_iconPath/commentIcon.svg";
+  static const deleteIcon = "$_iconPath/deleteIcon.svg";
 }

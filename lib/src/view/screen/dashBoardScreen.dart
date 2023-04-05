@@ -8,7 +8,11 @@ import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DashBoard extends StatelessWidget {
-  const DashBoard({Key? key}) : super(key: key);
+
+
+
+   DashBoard({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +20,7 @@ class DashBoard extends StatelessWidget {
         Get.put(BottomNavController());
     return Obx(() {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.mainBlackColor,
         body: WillPopScope(
           onWillPop: () async {
@@ -36,23 +41,31 @@ class DashBoard extends StatelessWidget {
                   AppAssets.homeIcon,
                   color: AppColors.pureWhite,
                 ),
-                activeIcon: SvgPicture.asset(AppAssets.homeIcon,
-                    color: AppColors.mainColor),
+                activeIcon: SvgPicture.asset(
+                  AppAssets.homeIcon,
+                  color: AppColors.mainColor,
+                ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(AppAssets.orderIcon),
-                activeIcon: SvgPicture.asset(AppAssets.orderIcon,
-                    color: AppColors.mainColor),
+                activeIcon: SvgPicture.asset(
+                  AppAssets.orderIcon,
+                  color: AppColors.mainColor,
+                ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(AppAssets.favouriteIcon),
-                activeIcon: SvgPicture.asset(AppAssets.favouriteIcon,
-                    color: AppColors.mainColor),
+                activeIcon: SvgPicture.asset(
+                  AppAssets.favouriteIcon,
+                  color: AppColors.mainColor,
+                ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(AppAssets.profileIcon),
-                activeIcon: SvgPicture.asset(AppAssets.profileIcon,
-                    color: AppColors.mainColor),
+                activeIcon: SvgPicture.asset(
+                  AppAssets.profileIcon,
+                  color: AppColors.mainColor,
+                ),
                 label: '')
           ],
           onTap: (index) {
@@ -60,18 +73,15 @@ class DashBoard extends StatelessWidget {
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: Padding(
-          padding: EdgeInsets.only(bottom: 1.2.h),
-          child: FloatingActionButton(
-            backgroundColor: AppColors.mainColor,
-            onPressed: () {
-              bottomNavController.incrementTab(1);
-            },
-            // tooltip: 'Increment',
-            child: Icon(
-              AppIcons.addIcon,
-              color: AppColors.pureWhite,
-            ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.mainColor,
+          onPressed: () {
+            bottomNavController.incrementTab(1);
+          },
+          // tooltip: 'Increment',
+          child: Icon(
+            AppIcons.addIcon,
+            color: AppColors.pureWhite,
           ),
         ),
       );

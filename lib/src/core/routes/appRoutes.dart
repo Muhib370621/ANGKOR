@@ -1,5 +1,6 @@
 import 'package:angkor/src/core/routes/routeNames.dart';
 import 'package:angkor/src/view/screen/dashBoardScreen.dart';
+import 'package:angkor/src/view/screen/drawer/manageUsers.dart';
 import 'package:angkor/src/view/screen/onBoarding/appLoader.dart';
 import 'package:angkor/src/view/screen/onBoarding/loginScreen.dart';
 import 'package:angkor/src/view/screen/onBoarding/otpVerificationScreen.dart';
@@ -12,7 +13,7 @@ class AppRoutes {
   static final routes = [
     GetPage(
       name: RouteNames.bottomNav,
-      page: () => const DashBoard(),
+      page: () =>  DashBoard(),
     ),
     GetPage(
       name: RouteNames.appLoader,
@@ -29,6 +30,10 @@ class AppRoutes {
     GetPage(
       name: RouteNames.otpVerificationScreen,
       page: () => const OTPVerificationScreen(),
+    ),
+    GetPage(
+      name: RouteNames.manageUsers,
+      page: () => const ManageUsers(),
     ),
   ];
 }

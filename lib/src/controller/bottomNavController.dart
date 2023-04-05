@@ -10,13 +10,14 @@ import '../view/screen/bottomNav/homeScreen.dart';
 class BottomNavController extends GetxController{
 
   final RxList<Widget> pages = [
-    const HomeScreen(),
+     HomeScreen(),
     const CategoryScreen(),
     const FavouriteScreen(),
     const ProfileScreen(),
   ].obs;
 
   RxInt cIndex = 0.obs;
+  RxInt drawerIndex = 0.obs;
 
   void incrementTab(index) {
     // setState(() {
