@@ -3,6 +3,7 @@ import 'package:angkor/src/core/routes/routeNames.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/core/utils/appTextStyle.dart';
+import 'package:angkor/src/view/blocks/roleSelectionPopup.dart';
 import 'package:angkor/src/view/component/customActionButton.dart';
 import 'package:angkor/src/view/component/customMiniActionButton.dart';
 import 'package:angkor/src/view/component/customtextField.dart';
@@ -10,6 +11,7 @@ import 'package:angkor/src/view/component/socialButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -36,19 +38,23 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  const RoleSelectionPopup(),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Image.asset(
                     AppAssets.angkorSplashIcon,
                     scale: 6,
                   ),
                   SizedBox(
-                    height: 3.h,
+                    height: 2.5.h,
                   ),
                   Text(
                     "Welcome",
                     style: AppTextStyles.mainHeading,
                   ),
                   SizedBox(
-                    height: 5.h,
+                    height: 4.h,
                   ),
                   SizedBox(
                     height: 20.h,
@@ -91,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: 8.h,
+                    height: 6.h,
                   ),
                   SizedBox(
                     width: 50.w,

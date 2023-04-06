@@ -2,6 +2,7 @@ class AppAssets{
   static const String _imagesPath = "assets/images";
   // static const String _logoPath = "assets/logo";
   static const String _iconPath = "assets/icons";
+  static const String _animationPath = "assets/animations";
 
 
   ///~~~~~~~~~~logos~~~~~~~~~~~~///
@@ -12,6 +13,7 @@ class AppAssets{
 
   ///~~~~~~~~~~images~~~~~~~~~~~~///
   static const background = "$_imagesPath/background.png";
+  static const tutorialContent = "$_imagesPath/tutorialImage.png";
   ///~~~~~~svgs~~~~~~~~///
   ///~~~~~~pngs~~~~~~~~///
 
@@ -37,4 +39,12 @@ class AppAssets{
   static const backIcon = "$_iconPath/backIcon.svg";
   static const commentIcon = "$_iconPath/commentIcon.svg";
   static const deleteIcon = "$_iconPath/deleteIcon.svg";
+  static const appointmentIcon = "$_iconPath/appointmentIcon.svg";
+  static const contentIcon = "$_iconPath/contentIcon.svg";
+  static const itemsIcon = "$_iconPath/itemsIcon.svg";
+  static const meetingIcon = "$_iconPath/meetingIcon.svg";
+  static const aboutIcon = "$_iconPath/aboutIcon.svg";
+
+///~~~~~~~~~~animations~~~~~~~~~~~~///
+  static const roleIcon = "$_animationPath/role.json";
 }

@@ -20,7 +20,7 @@ class DashBoard extends StatelessWidget {
         Get.put(BottomNavController());
     return Obx(() {
       return Scaffold(
-        resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.mainBlackColor,
         body: WillPopScope(
           onWillPop: () async {

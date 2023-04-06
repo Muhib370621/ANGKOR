@@ -14,7 +14,7 @@ class DataBlockWithLabel extends StatelessWidget {
       height: 17.h,
       width: 42.w,
       decoration: const BoxDecoration(
-        color: AppColors.mainGreyColor,
+        color: AppColors.mainBlackColor,
         borderRadius: BorderRadius.all(
           Radius.circular(
             20,
