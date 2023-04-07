@@ -1,4 +1,3 @@
-import 'package:angkor/src/core/shared/getxPopup.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/view/component/customIconContainer.dart';
 import 'package:angkor/src/view/prompts.dart';

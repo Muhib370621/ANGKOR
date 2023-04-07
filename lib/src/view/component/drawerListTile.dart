@@ -1,5 +1,4 @@
 import 'package:angkor/src/controller/bottomNavController.dart';
-import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

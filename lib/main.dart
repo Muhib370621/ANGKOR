@@ -6,7 +6,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'src/core/routes/appRoutes.dart';
 import 'src/core/routes/routeNames.dart';
 import 'src/core/utils/appColors.dart';
-import 'src/view/screen/dashBoardScreen.dart';
 
 void main() {
   runApp(const MyApp());

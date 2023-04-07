@@ -1,19 +1,14 @@
 import 'package:angkor/src/controller/distributorDetailController.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
-import 'package:angkor/src/core/utils/appTextStyle.dart';
-import 'package:angkor/src/view/blocks/simpleDataField.dart';
 import 'package:angkor/src/view/component/angkorHeader.dart';
-import 'package:angkor/src/view/component/dataTable.dart';
 import 'package:angkor/src/view/component/filterIcon.dart';
-import 'package:angkor/src/view/component/searchTextField.dart';
 import 'package:angkor/src/view/screen/distributor/distributorChef.dart';
 import 'package:angkor/src/view/screen/distributor/distributorInventory.dart';
 import 'package:angkor/src/view/screen/distributor/distributorProfile.dart';
 import 'package:angkor/src/view/screen/distributor/distributorRestaurant.dart';
 import 'package:angkor/src/view/screen/distributor/distributorSeller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -149,7 +144,7 @@ class DistributorDetails extends StatelessWidget {
                 ),
                 Visibility(
                   visible: distributorDetailController.filterIndex.value == 0,
-                  child: Expanded(
+                  child: const Expanded(
                     child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),
                       child: DistributorProfile(),
@@ -160,7 +155,7 @@ class DistributorDetails extends StatelessWidget {
                   visible: distributorDetailController.filterIndex.value == 1,
                   child: Expanded(
                     child: SingleChildScrollView(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         child: DistributorInventory(
                           controller: distributorDetailController
                               .inventorySearchController.value,
@@ -200,7 +195,6 @@ class DistributorDetails extends StatelessWidget {
                         )),
                   ),
                 ),
-
               ],
             );
           }),

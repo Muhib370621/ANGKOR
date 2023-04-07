@@ -9,9 +9,7 @@ import 'package:angkor/src/view/component/customMiniActionButton.dart';
 import 'package:angkor/src/view/component/customtextField.dart';
 import 'package:angkor/src/view/component/socialButton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginScreen extends StatelessWidget {

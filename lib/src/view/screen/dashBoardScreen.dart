@@ -1,10 +1,8 @@
 import 'package:angkor/src/controller/bottomNavController.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
-import 'package:angkor/src/core/utils/appIcons.dart';
 import 'package:angkor/src/view/component/navbarTile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
