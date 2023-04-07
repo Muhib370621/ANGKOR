@@ -1,5 +1,6 @@
 import 'package:angkor/src/core/routes/routeNames.dart';
 import 'package:angkor/src/view/screen/dashBoardScreen.dart';
+import 'package:angkor/src/view/screen/distributor/distributorDetails.dart';
 import 'package:angkor/src/view/screen/drawer/manageUsers.dart';
 import 'package:angkor/src/view/screen/onBoarding/appLoader.dart';
 import 'package:angkor/src/view/screen/onBoarding/loginScreen.dart';
@@ -34,6 +35,10 @@ class AppRoutes {
     GetPage(
       name: RouteNames.manageUsers,
       page: () => const ManageUsers(),
+    ),
+    GetPage(
+      name: RouteNames.distributorDetails,
+      page: () => const DistributorDetails(),
     ),
   ];
 }

@@ -3,6 +3,7 @@ import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/core/utils/appTextStyle.dart';
 import 'package:angkor/src/view/component/angkorHeader.dart';
+import 'package:angkor/src/view/component/dataTable.dart';
 import 'package:angkor/src/view/component/filterIcon.dart';
 import 'package:angkor/src/view/component/listTileIconContainer.dart';
 import 'package:angkor/src/view/component/searchTextField.dart';
@@ -115,91 +116,13 @@ class ManageUsers extends StatelessWidget {
               SizedBox(
                 height: 2.h,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    "Name",
-                    style: AppTextStyles.tableHeader,
-                  ),
-                  Text(
-                    "Restaurant Name",
-                    style: AppTextStyles.tableHeader,
-                  ),
-                  Container(
-                    height: 4.5.h,
-                    width: 18.w,
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    decoration: const BoxDecoration(
-                      color: AppColors.mainBlackColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          8,
-                        ),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "Add",
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              color: AppColors.pureWhite,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Icon(
-                          Icons.add,
-                          color: AppColors.pureWhite,
-                          size: 18.sp,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const Divider(
-                color: AppColors.pureWhite,
-                thickness: 1,
-              ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: 10,
-                    physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          ListTile(
-                            leading: Text("Chef Name",
-                                style: AppTextStyles.tableListTiles),
-                            title: Padding(
-                              padding: const EdgeInsets.only(bottom: 5),
-                              child: Text(
-                                "Restaurant Name",
-                                style: AppTextStyles.tableListTiles,
-                              ),
-                            ),
-                            trailing: SizedBox(
-                              width: 20.w,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                                children: const [
-                                  ListTileIconContainer(svgPath: AppAssets.commentIcon,),
-                                  ListTileIconContainer(svgPath: AppAssets.deleteIcon,),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const Divider(
-                            color: AppColors.pureWhite,
-                            thickness: 1,
-                          ),
-                        ],
-                      );
-                    }),
+              CustomDataTable(
+                header1: 'Name',
+                header2: 'Restaurant Name',
+                data1: 'Chef Name',
+                data2: 'Restaurant Name',
+                svgPath1: AppAssets.commentIcon,
+                svgPath2: AppAssets.deleteIcon,
               ),
             ],
           ),

@@ -1,5 +1,7 @@
+import 'package:angkor/src/core/shared/getxPopup.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/view/component/customIconContainer.dart';
+import 'package:angkor/src/view/prompts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -33,10 +35,15 @@ class AngkorHeader extends StatelessWidget {
             AppAssets.angkorSplashIcon,
             scale: 9,
           ),
-          CustomIconContainer(
-            svgPath: AppAssets.bellIcon,
-            height: 5.7.h,
-            width: 12.5.w,
+          GestureDetector(
+            onTap: (){
+              Prompts.newOrder();
+            },
+            child: CustomIconContainer(
+              svgPath: AppAssets.bellIcon,
+              height: 5.7.h,
+              width: 12.5.w,
+            ),
           ),
         ],
       ),

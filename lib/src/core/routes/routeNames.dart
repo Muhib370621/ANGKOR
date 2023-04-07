@@ -6,6 +6,7 @@ class RouteNames{
   static const otpVerificationScreen = '/otpVerificationScreen';
   static const bottomNav = '/bottomNav';
   static const manageUsers = '/manageUsers';
+  static const distributorDetails = '/distributorDetails';
 
 
 }

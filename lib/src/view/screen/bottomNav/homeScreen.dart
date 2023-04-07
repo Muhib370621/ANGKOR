@@ -1,5 +1,6 @@
 import 'package:angkor/src/controller/homeScreenController.dart';
 import 'package:angkor/src/controller/loginController.dart';
+import 'package:angkor/src/core/routes/routeNames.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/core/utils/appTextStyle.dart';
@@ -10,6 +11,7 @@ import 'package:angkor/src/view/component/customIconContainer.dart';
 import 'package:angkor/src/view/component/dataBlockwithLabel.dart';
 import 'package:angkor/src/view/component/drawerListTile.dart';
 import 'package:angkor/src/view/component/filterIcon.dart';
+import 'package:angkor/src/view/component/popupDurationButton.dart';
 import 'package:angkor/src/view/component/searchTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       drawer: const AngkorDrawer(),
       body: Stack(
+        // fit: StackFit.expand,
         children: [
           SizedBox(
             width: 100.w,
@@ -166,43 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     homeScreenController.searchController.value,
                               ),
                             ),
-                            PopupMenuButton<String>(
-                              surfaceTintColor: AppColors.mainColor,
-                              shadowColor: AppColors.mainColor,
-                              color: AppColors.mainGreyColor,
-                              itemBuilder: (BuildContext context) {
-                                return _items.map((String item) {
-                                  return PopupMenuItem<String>(
-                                    value: item,
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.check,
-                                          color: item == _selectedItem
-                                              ? AppColors.mainColor
-                                              : AppColors.mainGreyColor,
-                                          size: 20.sp,
-                                        ),
-                                        SizedBox(
-                                          width: 1.w,
-                                        ),
-                                        Text(
-                                          item,
-                                          style: TextStyle(
-                                            fontSize: 18.sp,
-                                            color: AppColors.pureWhite,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }).toList();
-                              },
-                              onSelected: (String selectedItem) {
-                                setState(() {
-                                  _selectedItem = selectedItem;
-                                });
-                              },
+                            PopupDurationButton(
                               child: CustomIconContainer(
                                 svgPath: AppAssets.filterIcon,
                                 height: 6.h,
@@ -300,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Visibility(
-            visible: loginController.selectedItem=="Chef Admin",
+            visible: loginController.selectedItem == "Chef Admin",
             child: Column(
               children: [
                 SizedBox(
@@ -325,8 +292,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 6.h,
                                 width: 70.w,
                                 child: SearchTextField(
-                                  controller:
-                                      homeScreenController.searchController.value,
+                                  controller: homeScreenController
+                                      .searchController.value,
                                 ),
                               ),
                               PopupMenuButton<String>(
@@ -429,22 +396,157 @@ class _HomeScreenState extends State<HomeScreen> {
                               physics: const BouncingScrollPhysics(),
                               children: [
                                 const TutorialContainer(),
-                                SizedBox(width: 2.5.w,),
+                                SizedBox(
+                                  width: 2.5.w,
+                                ),
                                 const TutorialContainer(),
-                                SizedBox(width: 2.5.w,),
+                                SizedBox(
+                                  width: 2.5.w,
+                                ),
                                 const TutorialContainer(),
-                                SizedBox(width: 2.5.w,),
+                                SizedBox(
+                                  width: 2.5.w,
+                                ),
                                 const TutorialContainer(),
-                                SizedBox(width: 2.5.w,),
+                                SizedBox(
+                                  width: 2.5.w,
+                                ),
                               ],
                             ),
                           ),
-                          SizedBox(height: 3.h,),
+                          SizedBox(
+                            height: 3.h,
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          Visibility(
+            visible: loginController.selectedItem == "Distributor",
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.s,
+              children: [
+                SizedBox(
+                  height: 6.h,
+                ),
+                const AngkorHeader(),
+                SizedBox(
+                  height: 4.h,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: SizedBox(
+                      width: 90.w,
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Dashboard",
+                                style: AppTextStyles.mainHeading,
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: 70.w,
+                                    child: SearchTextField(
+                                      controller:
+                                          homeScreenController.searchController.value,
+                                    ),
+                                  ),
+                                  PopupDurationButton(
+                                    child: CustomIconContainer(
+                                      svgPath: AppAssets.filterIcon,
+                                      height: 6.h,
+                                      width: 12.w,
+                                      svgColor: AppColors.pureWhite,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Pending Order",
+                                    style: AppTextStyles.mainHeadingW600,
+                                  ),
+                                  Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 0.6.h,
+                                      ),
+                                      InkWell(
+                                        onTap: (){
+                                          Get.toNamed(RouteNames.distributorDetails);
+                                        },
+                                        child: Text(
+                                          "View All",
+                                          style: TextStyle(
+                                            fontSize: 17.sp,
+                                            color: AppColors.pureWhite,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 2.h,),
+                              const FullDataBlockWithLabel(
+                                labelText: 'Pending order',
+                                valueText: '352',
+                              ),
+                              SizedBox(height: 3.h,),
+                              Text("Orders Report",style: AppTextStyles.mainHeadingW600,),
+                              SizedBox(height: 2.h,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  DataBlockWithLabel(labelText: "Orders Confirmed", valueText: "12"),
+                                  DataBlockWithLabel(labelText: "Orders Cancelled", valueText: "75"),
+                                ],
+                              ),
+                              SizedBox(height: 2.h,),
+                              Text("Orders",style: AppTextStyles.mainHeadingW600,),
+                              SizedBox(height: 2.h,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  DataBlockWithLabel(labelText: "Orders Completed", valueText: "92"),
+                                  DataBlockWithLabel(labelText: "In Process", valueText: "75"),
+                                ],
+                              ),
+                              SizedBox(height: 12.h,)
+
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           )

@@ -85,7 +85,6 @@ class DashBoard extends StatelessWidget {
             ],
           ),
         ),
-
         // bottomNavigationBar: BottomNavigationBar(
         //   currentIndex: bottomNavController.cIndex.value,
         //   type: BottomNavigationBarType.fixed,
