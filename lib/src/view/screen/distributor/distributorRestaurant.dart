@@ -10,28 +10,31 @@ class DistributorRestaurant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: 90.w,
-          child: SearchTextField(
-              controller: controller),
-        ),
-        SizedBox(
-          height: 2.h,
-        ),
-        SizedBox(
-          width: 90.w,
-          child: CustomDataTable(
-            header1: 'Restaurants',
-            header2: 'Category',
-            data1: "Name",
-            data2: 'Category',
-            svgPath1: AppAssets.commentIcon,
-            svgPath2: AppAssets.deleteIcon,
+    return SizedBox(
+      width: 90.w,
+      child: Column(
+        children: [
+          SizedBox(
+            width: 90.w,
+            child: SearchTextField(
+                controller: controller),
           ),
-        ),
-      ],
+          SizedBox(
+            height: 2.h,
+          ),
+          SizedBox(
+            width: 90.w,
+            child: const CustomDataTable(
+              header1: 'Restaurants',
+              header2: 'Category',
+              data1: "Name",
+              data2: 'Category',
+              svgPath1: AppAssets.commentIcon,
+              svgPath2: AppAssets.deleteIcon,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -27,138 +27,136 @@ class CustomDataTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  header1,
-                  style: AppTextStyles.tableHeader,
-                ),
-                Text(
-                  header2,
-                  style: AppTextStyles.tableHeader,
-                ),
-                Container(
-                  height: 4.5.h,
-                  width: 18.w,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  decoration: const BoxDecoration(
-                    color: AppColors.mainBlackColor,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        8,
-                      ),
+    return SizedBox(
+      width: 90.w,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                header1,
+                style: AppTextStyles.tableHeader,
+              ),
+              Text(
+                header2,
+                style: AppTextStyles.tableHeader,
+              ),
+              Container(
+                height: 4.5.h,
+                width: 18.w,
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                decoration: const BoxDecoration(
+                  color: AppColors.mainBlackColor,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      8,
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "Add",
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            color: AppColors.pureWhite,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Icon(
-                        Icons.add,
-                        color: AppColors.pureWhite,
-                        size: 18.sp,
-                      ),
-                    ],
-                  ),
                 ),
-              ],
-            ),
-            const Divider(
-              color: AppColors.pureWhite,
-              thickness: 1,
-              height: 12,
-            ),
-            ListView.builder(
-                itemCount: 10,
-                physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            data1,
-                            style: AppTextStyles.tableListTiles,
-                          ),
-                          Text(
-                            data2,
-                            style: AppTextStyles.tableListTiles,
-                          ),
-                          SizedBox(
-                            width: isChef==true?30.w:22.w,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Visibility(
-                                  visible: isChef == true,
-                                  child: ListTileIconContainer(
-                                    svgPath: svgPath2,
-                                  ),
-                                ),
-                                ListTileIconContainer(
-                                  svgPath: svgPath1,
-                                ),
-                                ListTileIconContainer(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "Add",
+                      style: TextStyle(
+                          fontSize: 16.sp,
+                          color: AppColors.pureWhite,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    Icon(
+                      Icons.add,
+                      color: AppColors.pureWhite,
+                      size: 18.sp,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const Divider(
+            color: AppColors.pureWhite,
+            thickness: 1,
+            height: 12,
+          ),
+          ListView.builder(
+              itemCount: 10,
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          data1,
+                          style: AppTextStyles.tableListTiles,
+                        ),
+                        Text(
+                          data2,
+                          style: AppTextStyles.tableListTiles,
+                        ),
+                        SizedBox(
+                          width: isChef==true?30.w:22.w,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Visibility(
+                                visible: isChef == true,
+                                child: ListTileIconContainer(
                                   svgPath: svgPath2,
                                 ),
+                              ),
+                              ListTileIconContainer(
+                                svgPath: svgPath1,
+                              ),
+                              ListTileIconContainer(
+                                svgPath: svgPath2,
+                              ),
 
-                              ],
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
-                      // ListTile(
-                      // // isThreeLine:true,
-                      //   leading: Text(data1,
-                      //       style: AppTextStyles.tableListTiles),
-                      //   title: Padding(
-                      //     padding: const EdgeInsets.only(bottom: 5),
-                      //     child: Text(
-                      //       data2,
-                      //       style: AppTextStyles.tableListTiles,
-                      //     ),
-                      //   ),
-                      //   trailing: SizedBox(
-                      //     width: 20.w,
-                      //     child: Row(
-                      //       crossAxisAlignment: CrossAxisAlignment.center,
-                      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //       children:  [
-                      //         ListTileIconContainer(
-                      //           svgPath: svgPath1,
-                      //         ),
-                      //         ListTileIconContainer(
-                      //           svgPath: svgPath2,
-                      //         ),
-                      //       ],
-                      //     ),
-                      //   ),
-                      // ),
-                      const Divider(
-                        color: AppColors.pureWhite,
-                        thickness: 1,
-                        height: 28,
-                      ),
-                    ],
-                  );
-                })
-          ],
-        ),
+                        ),
+                      ],
+                    ),
+                    // ListTile(
+                    // // isThreeLine:true,
+                    //   leading: Text(data1,
+                    //       style: AppTextStyles.tableListTiles),
+                    //   title: Padding(
+                    //     padding: const EdgeInsets.only(bottom: 5),
+                    //     child: Text(
+                    //       data2,
+                    //       style: AppTextStyles.tableListTiles,
+                    //     ),
+                    //   ),
+                    //   trailing: SizedBox(
+                    //     width: 20.w,
+                    //     child: Row(
+                    //       crossAxisAlignment: CrossAxisAlignment.center,
+                    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //       children:  [
+                    //         ListTileIconContainer(
+                    //           svgPath: svgPath1,
+                    //         ),
+                    //         ListTileIconContainer(
+                    //           svgPath: svgPath2,
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    const Divider(
+                      color: AppColors.pureWhite,
+                      thickness: 1,
+                      height: 28,
+                    ),
+                  ],
+                );
+              })
+        ],
       ),
     );
   }

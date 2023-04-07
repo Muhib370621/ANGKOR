@@ -142,59 +142,67 @@ class DistributorDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                Visibility(
-                  visible: distributorDetailController.filterIndex.value == 0,
-                  child: const Expanded(
-                    child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: DistributorProfile(),
-                    ),
+                 Expanded(
+                   flex: 1,
+                  child: Column(
+                    children: [
+                      Visibility(
+                        visible:distributorDetailController.filterIndex.value==0,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                            physics: BouncingScrollPhysics(),
+                            child: DistributorProfile(),
+                          ),
+                        ),
+                      ),
+                      Visibility(
+                        visible: distributorDetailController.filterIndex.value == 1,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: DistributorInventory(
+                                controller: distributorDetailController
+                                    .inventorySearchController.value,
+                              )),
+                        ),
+                      ),
+                      Visibility(
+                        visible: distributorDetailController.filterIndex.value == 2,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: DistributorRestaurant(
+                                controller: distributorDetailController
+                                    .restaurantSearchController.value,
+                              )),
+                        ),
+                      ),
+                      Visibility(
+                        visible: distributorDetailController.filterIndex.value == 3,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: DistributorChef(
+                                controller: distributorDetailController
+                                    .chefSearchController.value,
+                              )),
+                        ),
+                      ),
+                      Visibility(
+                        visible: distributorDetailController.filterIndex.value == 4,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: DistributorSeller(
+                                controller: distributorDetailController
+                                    .sellerSearchController.value,
+                              )),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Visibility(
-                  visible: distributorDetailController.filterIndex.value == 1,
-                  child: Expanded(
-                    child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: DistributorInventory(
-                          controller: distributorDetailController
-                              .inventorySearchController.value,
-                        )),
-                  ),
-                ),
-                Visibility(
-                  visible: distributorDetailController.filterIndex.value == 2,
-                  child: Expanded(
-                    child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: DistributorRestaurant(
-                          controller: distributorDetailController
-                              .restaurantSearchController.value,
-                        )),
-                  ),
-                ),
-                Visibility(
-                  visible: distributorDetailController.filterIndex.value == 3,
-                  child: Expanded(
-                    child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: DistributorChef(
-                          controller: distributorDetailController
-                              .chefSearchController.value,
-                        )),
-                  ),
-                ),
-                Visibility(
-                  visible: distributorDetailController.filterIndex.value == 4,
-                  child: Expanded(
-                    child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: DistributorSeller(
-                          controller: distributorDetailController
-                              .sellerSearchController.value,
-                        )),
-                  ),
-                ),
+
               ],
             );
           }),
