@@ -16,6 +16,9 @@ class AppAssets{
   static const tutorialContent = "$_imagesPath/tutorialImage.png";
   static const sampleAvatar = "$_imagesPath/sampleAvatar.png";
   static const circleAvatar = "$_imagesPath/circleAvatar.svg";
+  static const restaurantLogo = "$_imagesPath/restaurantLogo.png";
+  static const sampleFood = "$_imagesPath/sampleFood.png";
+  static const customerHeader = "$_imagesPath/customerHeader.png";
 
   ///~~~~~~svgs~~~~~~~~///
   ///~~~~~~pngs~~~~~~~~///
@@ -49,6 +52,11 @@ class AppAssets{
   static const aboutIcon = "$_iconPath/aboutIcon.svg";
   static const cameraIcon = "$_iconPath/cameraIcon.svg";
   static const editIcon = "$_iconPath/editIcon.svg";
+  static const customerIcon = "$_iconPath/customerIcon.svg";
+  static const inventoryIcon = "$_iconPath/inventoryIcon.svg";
+  static const upIcon = "$_iconPath/Down.svg";
+  static const downIcon = "$_iconPath/downIcon.svg";
+  static const addIcon = "$_iconPath/addIcon.svg";
 
 ///~~~~~~~~~~animations~~~~~~~~~~~~///
   static const roleIcon = "$_animationPath/role.json";

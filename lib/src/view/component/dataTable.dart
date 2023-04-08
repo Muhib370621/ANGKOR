@@ -106,7 +106,7 @@ class CustomDataTable extends StatelessWidget {
                               Visibility(
                                 visible: isChef == true,
                                 child: ListTileIconContainer(
-                                  svgPath: svgPath2,
+                                  svgPath: svgPath3!,
                                 ),
                               ),
                               ListTileIconContainer(

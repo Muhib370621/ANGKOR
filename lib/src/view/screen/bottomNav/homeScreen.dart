@@ -375,43 +375,43 @@ class _HomeScreenState extends State<HomeScreen> {
                             text: 'About',
                             svgPath: AppAssets.aboutIcon,
                           ),
-                          SizedBox(
-                            height: 3.h,
-                          ),
-                          Text(
-                            "Recent Tutorials",
-                            style: AppTextStyles.mainHeading,
-                          ),
-                          SizedBox(
-                            height: 3.h,
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                            child: ListView(
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              // padding: const EdgeInsets.symmetric(horizontal: 15),
-                              physics: const BouncingScrollPhysics(),
-                              children: [
-                                const TutorialContainer(),
-                                SizedBox(
-                                  width: 2.5.w,
-                                ),
-                                const TutorialContainer(),
-                                SizedBox(
-                                  width: 2.5.w,
-                                ),
-                                const TutorialContainer(),
-                                SizedBox(
-                                  width: 2.5.w,
-                                ),
-                                const TutorialContainer(),
-                                SizedBox(
-                                  width: 2.5.w,
-                                ),
-                              ],
-                            ),
-                          ),
+                          // SizedBox(
+                          //   height: 3.h,
+                          // ),
+                          // Text(
+                          //   "Recent Tutorials",
+                          //   style: AppTextStyles.mainHeading,
+                          // ),
+                          // SizedBox(
+                          //   height: 3.h,
+                          // ),
+                          // SizedBox(
+                          //   height: 10.h,
+                          //   // child: ListView(
+                          //   //   shrinkWrap: true,
+                          //   //   scrollDirection: Axis.horizontal,
+                          //   //   // padding: const EdgeInsets.symmetric(horizontal: 15),
+                          //   //   physics: const BouncingScrollPhysics(),
+                          //   //   children: [
+                          //   //     const TutorialContainer(),
+                          //   //     SizedBox(
+                          //   //       width: 2.5.w,
+                          //   //     ),
+                          //   //     const TutorialContainer(),
+                          //   //     SizedBox(
+                          //   //       width: 2.5.w,
+                          //   //     ),
+                          //   //     const TutorialContainer(),
+                          //   //     SizedBox(
+                          //   //       width: 2.5.w,
+                          //   //     ),
+                          //   //     const TutorialContainer(),
+                          //   //     SizedBox(
+                          //   //       width: 2.5.w,
+                          //   //     ),
+                          //   //   ],
+                          //   // ),
+                          // ),
                           SizedBox(
                             height: 3.h,
                           ),
@@ -424,7 +424,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Visibility(
-            visible: loginController.selectedItem == "Distributor",
+            visible: loginController.selectedItem == "Distributor" ||
+                loginController.selectedItem == "Seller",
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.s,
               children: [
@@ -447,21 +448,37 @@ class _HomeScreenState extends State<HomeScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Dashboard",
-                                style: AppTextStyles.mainHeading,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Dashboard",
+                                    style: AppTextStyles.mainHeading,
+                                  ),
+                                  Visibility(
+                                    visible: loginController.selectedItem == "Seller",
+                                    child: Text(
+                                      "Statistic Report",
+                                      style: TextStyle(
+                                        fontSize: 17.sp,
+                                        color: AppColors.pureWhite,
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                               SizedBox(
                                 height: 2.h,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(
                                     width: 70.w,
                                     child: SearchTextField(
-                                      controller:
-                                          homeScreenController.searchController.value,
+                                      controller: homeScreenController
+                                          .searchController.value,
                                     ),
                                   ),
                                   PopupDurationButton(
@@ -483,7 +500,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
@@ -496,8 +514,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         height: 0.6.h,
                                       ),
                                       InkWell(
-                                        onTap: (){
-                                          Get.toNamed(RouteNames.distributorDetails);
+                                        onTap: () {
+                                          Get.toNamed(
+                                              RouteNames.distributorDetails);
                                         },
                                         child: Text(
                                           "View All",
@@ -511,33 +530,59 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 2.h,),
+                              SizedBox(
+                                height: 2.h,
+                              ),
                               const FullDataBlockWithLabel(
                                 labelText: 'Pending order',
                                 valueText: '352',
                               ),
-                              SizedBox(height: 3.h,),
-                              Text("Orders Report",style: AppTextStyles.mainHeadingW600,),
-                              SizedBox(height: 2.h,),
+                              SizedBox(
+                                height: 3.h,
+                              ),
+                              Text(
+                                "Orders Report",
+                                style: AppTextStyles.mainHeadingW600,
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
-                                  DataBlockWithLabel(labelText: "Orders Confirmed", valueText: "12"),
-                                  DataBlockWithLabel(labelText: "Orders Cancelled", valueText: "75"),
+                                  DataBlockWithLabel(
+                                      labelText: "Orders Confirmed",
+                                      valueText: "12"),
+                                  DataBlockWithLabel(
+                                      labelText: "Orders Cancelled",
+                                      valueText: "75"),
                                 ],
                               ),
-                              SizedBox(height: 2.h,),
-                              Text("Orders",style: AppTextStyles.mainHeadingW600,),
-                              SizedBox(height: 2.h,),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Text(
+                                "Orders",
+                                style: AppTextStyles.mainHeadingW600,
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
-                                  DataBlockWithLabel(labelText: "Orders Completed", valueText: "92"),
-                                  DataBlockWithLabel(labelText: "In Process", valueText: "75"),
+                                  DataBlockWithLabel(
+                                      labelText: "Orders Completed",
+                                      valueText: "92"),
+                                  DataBlockWithLabel(
+                                      labelText: "In Process", valueText: "75"),
                                 ],
                               ),
-                              SizedBox(height: 12.h,)
-
+                              SizedBox(
+                                height: 12.h,
+                              )
                             ],
                           ),
                         ],

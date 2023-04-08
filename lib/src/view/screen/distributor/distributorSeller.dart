@@ -22,13 +22,14 @@ class DistributorSeller extends StatelessWidget {
         ),
         SizedBox(
           width: 90.w,
-          child: CustomDataTable(
+          child: const CustomDataTable(
             header1: 'Sellers',
             header2: 'Category',
             data1: "Seller Name",
             data2: 'Category',
             svgPath1: AppAssets.editIcon,
             svgPath2: AppAssets.deleteIcon,
+            svgPath3: "",
           ),
         ),
       ],

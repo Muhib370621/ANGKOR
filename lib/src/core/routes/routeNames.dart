@@ -7,6 +7,8 @@ class RouteNames{
   static const bottomNav = '/bottomNav';
   static const manageUsers = '/manageUsers';
   static const distributorDetails = '/distributorDetails';
+  static const sellerInventory = '/sellerInventory';
+  static const customerHome = '/customerHome';
 
 
 }

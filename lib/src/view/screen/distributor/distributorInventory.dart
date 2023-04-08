@@ -32,6 +32,8 @@ class DistributorInventory extends StatelessWidget {
               data2: 'Category',
               svgPath1: AppAssets.editIcon,
               svgPath2: AppAssets.deleteIcon,
+              svgPath3: "",
+
             ),
           ),
         ],

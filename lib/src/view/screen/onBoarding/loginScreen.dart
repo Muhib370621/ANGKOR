@@ -91,6 +91,7 @@ class LoginScreen extends StatelessWidget {
                     backgroundColor: AppColors.mainColor,
                     textColor: AppColors.mainBlackColor,
                     onTap: () {
+
                       Get.toNamed(RouteNames.bottomNav);
                     },
                   ),
@@ -137,8 +138,8 @@ class LoginScreen extends StatelessWidget {
                     textColor: AppColors.mainColor,
                     onTap: () {
                       Get.toNamed(
-                        RouteNames.signUpScreen,
-                      );
+                              RouteNames.signUpScreen,
+                            );
                     },
                   ),
                 ],

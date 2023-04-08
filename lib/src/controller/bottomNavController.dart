@@ -1,4 +1,5 @@
 import 'package:angkor/src/view/screen/bottomNav/profileScreen.dart';
+import 'package:angkor/src/view/screen/customer/customerHome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,12 @@ class BottomNavController extends GetxController{
 
   final RxList<Widget> pages = [
      HomeScreen(),
+    const CategoryScreen(),
+    const FavouriteScreen(),
+    const ProfileScreen(),
+  ].obs;
+  final RxList<Widget> customerPages = [
+    const CustomerHome(),
     const CategoryScreen(),
     const FavouriteScreen(),
     const ProfileScreen(),

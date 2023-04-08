@@ -35,91 +35,101 @@ class ManageUsers extends StatelessWidget {
           ),
           Column(
             children: [
-              SizedBox(
-                height: 6.h,
+              Column(
+                children: [
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  const AngkorHeader(
+                    backEnabled: true,
+                  ),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  SizedBox(
+                    height: 5.5.h,
+                    child: Obx(() {
+                      return ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        physics: const BouncingScrollPhysics(),
+                        children: [
+                          GestureDetector(
+                              onTap: () {
+                                manageUserController.filterIndex.value = 0;
+                              },
+                              child: FilterIcon(
+                                filterText: 'Chefs',
+                                isActive:
+                                    manageUserController.filterIndex.value == 0
+                                        ? true
+                                        : false,
+                              )),
+                          GestureDetector(
+                            onTap: () {
+                              manageUserController.filterIndex.value = 1;
+                            },
+                            child: FilterIcon(
+                              filterText: 'Producers',
+                              isActive: manageUserController.filterIndex.value == 1
+                                  ? true
+                                  : false,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              manageUserController.filterIndex.value = 2;
+                            },
+                            child: FilterIcon(
+                              filterText: 'Seller',
+                              isActive: manageUserController.filterIndex.value == 2
+                                  ? true
+                                  : false,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              manageUserController.filterIndex.value = 3;
+                            },
+                            child: FilterIcon(
+                              filterText: 'Customers',
+                              isActive: manageUserController.filterIndex.value == 3
+                                  ? true
+                                  : false,
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  SizedBox(
+                    width: 90.w,
+                    child: SearchTextField(
+                      controller: manageUserController.searchController.value,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                ],
               ),
-              const AngkorHeader(
-                backEnabled: true,
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
-              SizedBox(
-                height: 5.5.h,
-                child: Obx(() {
-                  return ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    physics: const BouncingScrollPhysics(),
-                    children: [
-                      GestureDetector(
-                          onTap: () {
-                            manageUserController.filterIndex.value = 0;
-                          },
-                          child: FilterIcon(
-                            filterText: 'Chefs',
-                            isActive:
-                                manageUserController.filterIndex.value == 0
-                                    ? true
-                                    : false,
-                          )),
-                      GestureDetector(
-                        onTap: () {
-                          manageUserController.filterIndex.value = 1;
-                        },
-                        child: FilterIcon(
-                          filterText: 'Producers',
-                          isActive: manageUserController.filterIndex.value == 1
-                              ? true
-                              : false,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          manageUserController.filterIndex.value = 2;
-                        },
-                        child: FilterIcon(
-                          filterText: 'Seller',
-                          isActive: manageUserController.filterIndex.value == 2
-                              ? true
-                              : false,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          manageUserController.filterIndex.value = 3;
-                        },
-                        child: FilterIcon(
-                          filterText: 'Customers',
-                          isActive: manageUserController.filterIndex.value == 3
-                              ? true
-                              : false,
-                        ),
-                      ),
-                    ],
-                  );
-                }),
-              ),
-              SizedBox(
-                height: 2.h,
-              ),
-              SizedBox(
-                width: 90.w,
-                child: SearchTextField(
-                  controller: manageUserController.searchController.value,
+              const Expanded(
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: CustomDataTable(
+                    header1: 'Name',
+                    header2: 'Restaurant Name',
+                    data1: 'Chef Name',
+                    data2: 'Restaurant Name',
+                    svgPath1: AppAssets.commentIcon,
+                    svgPath2: AppAssets.deleteIcon,
+                    svgPath3: "",
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 2.h,
-              ),
-              CustomDataTable(
-                header1: 'Name',
-                header2: 'Restaurant Name',
-                data1: 'Chef Name',
-                data2: 'Restaurant Name',
-                svgPath1: AppAssets.commentIcon,
-                svgPath2: AppAssets.deleteIcon,
               ),
             ],
           ),

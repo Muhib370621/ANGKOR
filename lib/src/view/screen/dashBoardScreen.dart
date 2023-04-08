@@ -1,4 +1,5 @@
 import 'package:angkor/src/controller/bottomNavController.dart';
+import 'package:angkor/src/controller/loginController.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/view/component/navbarTile.dart';
@@ -13,6 +14,8 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     final BottomNavController bottomNavController =
         Get.put(BottomNavController());
+    final LoginController loginController = Get.put(LoginController());
+
     return Obx(() {
       return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -25,7 +28,9 @@ class DashBoard extends StatelessWidget {
             children: [
               IndexedStack(
                 index: bottomNavController.cIndex.value,
-                children: bottomNavController.pages,
+                children: loginController.selectedItem == "Customer"
+                    ? bottomNavController.customerPages
+                    : bottomNavController.pages,
               ),
 
               ///this is custom bottom nav bar
@@ -77,7 +82,11 @@ class DashBoard extends StatelessWidget {
                     color: AppColors.mainColor,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.add,size: 26.sp,color: AppColors.pureWhite,),
+                  child: Icon(
+                    Icons.add,
+                    size: 26.sp,
+                    color: AppColors.pureWhite,
+                  ),
                 ),
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:angkor/src/controller/bottomNavController.dart';
+import 'package:angkor/src/controller/loginController.dart';
 import 'package:angkor/src/core/routes/routeNames.dart';
 import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
@@ -13,7 +14,9 @@ class AngkorDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final BottomNavController bottomNavController =
-    Get.put(BottomNavController());
+        Get.put(BottomNavController());
+    final LoginController loginController = Get.put(LoginController());
+    bottomNavController.drawerIndex.value=0;
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
@@ -25,7 +28,7 @@ class AngkorDrawer extends StatelessWidget {
             ),
           ),
         ),
-        height: 60.h,
+        height: loginController.selectedItem == "Seller"?54.h:60.h,
         width: 58.w,
         child: Drawer(
           backgroundColor: AppColors.mainGreyColor,
@@ -46,81 +49,149 @@ class AngkorDrawer extends StatelessWidget {
               SizedBox(
                 height: 4.h,
               ),
-              SizedBox(
-                height: 32.h,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        bottomNavController.drawerIndex.value=0;
-                        Navigator.pop(context);
-                      },
-                      child: const DrawerListTile(
-                        title: 'Profile',
-                        svgPath: AppAssets.profileIcon,
-                        index: 0,
+              Visibility(
+                visible: loginController.selectedItem !="Seller",
+                child: SizedBox(
+                  height: 32.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 0;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Profile',
+                          svgPath: AppAssets.profileIcon,
+                          index: 0,
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        bottomNavController.drawerIndex.value=1;
-                        Navigator.pop(context);
-                      },
-                      child: const DrawerListTile(
-                        title: 'Orders',
-                        svgPath: AppAssets.orderIcon,
-                        index: 1,
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 1;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Orders',
+                          svgPath: AppAssets.orderIcon,
+                          index: 1,
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        bottomNavController.drawerIndex.value=2;
-                        Navigator.pop(context);
-                        Get.toNamed(RouteNames.manageUsers);
-
-                      },
-                      child: const DrawerListTile(
-                        title: 'Manage Users',
-                        svgPath: AppAssets.manageUserIcon,
-                        index: 2,
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 2;
+                          Navigator.pop(context);
+                          Get.toNamed(RouteNames.manageUsers);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Manage Users',
+                          svgPath: AppAssets.manageUserIcon,
+                          index: 2,
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        bottomNavController.drawerIndex.value=3;
-                        Navigator.pop(context);
-                      },
-                      child: const DrawerListTile(
-                        title: 'Generate Report',
-                        svgPath: AppAssets.genReportIcon,
-                        index: 3,
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 3;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Generate Report',
+                          svgPath: AppAssets.genReportIcon,
+                          index: 3,
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        bottomNavController.drawerIndex.value=4;
-                        Navigator.pop(context);
-                      },
-
-                      child: const DrawerListTile(
-                        title: 'Setting',
-                        svgPath: AppAssets.settingIcon,
-                        index: 4,
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 4;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Setting',
+                          svgPath: AppAssets.settingIcon,
+                          index: 4,
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        bottomNavController.drawerIndex.value=5;
-                        Navigator.pop(context);
-                      },
-                      child: const DrawerListTile(
-                        title: 'Help',
-                        svgPath: AppAssets.helpIcon,
-                        index: 5,
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 5;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Help',
+                          svgPath: AppAssets.helpIcon,
+                          index: 5,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: loginController.selectedItem == "Seller",
+                child: SizedBox(
+                  height: 27.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 0;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Customers',
+                          svgPath: AppAssets.customerIcon,
+                          index: 0,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 1;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Orders',
+                          svgPath: AppAssets.orderIcon,
+                          index: 1,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 2;
+                          Navigator.pop(context);
+                          Get.toNamed(RouteNames.sellerInventory);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Inventory',
+                          svgPath: AppAssets.inventoryIcon,
+                          index: 2,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 4;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Setting',
+                          svgPath: AppAssets.settingIcon,
+                          index: 4,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          bottomNavController.drawerIndex.value = 5;
+                          Navigator.pop(context);
+                        },
+                        child: const DrawerListTile(
+                          title: 'Help',
+                          svgPath: AppAssets.helpIcon,
+                          index: 5,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

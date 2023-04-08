@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(builder: (context, orientation, screenType) {
       return GetMaterialApp(
         theme: ThemeData(
+          unselectedWidgetColor: AppColors.pureWhite,
             colorScheme: ThemeData().colorScheme.copyWith(
               primary: AppColors.mainColor,
               secondary: AppColors.pureWhite,

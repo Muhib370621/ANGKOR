@@ -31,6 +31,7 @@ class DistributorRestaurant extends StatelessWidget {
               data2: 'Category',
               svgPath1: AppAssets.commentIcon,
               svgPath2: AppAssets.deleteIcon,
+              svgPath3: "",
             ),
           ),
         ],

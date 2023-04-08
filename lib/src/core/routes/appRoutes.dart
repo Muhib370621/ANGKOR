@@ -1,7 +1,9 @@
 import 'package:angkor/src/core/routes/routeNames.dart';
+import 'package:angkor/src/view/screen/customer/customerHome.dart';
 import 'package:angkor/src/view/screen/dashBoardScreen.dart';
 import 'package:angkor/src/view/screen/distributor/distributorDetails.dart';
 import 'package:angkor/src/view/screen/drawer/manageUsers.dart';
+import 'package:angkor/src/view/screen/drawer/sellerInventory.dart';
 import 'package:angkor/src/view/screen/onBoarding/appLoader.dart';
 import 'package:angkor/src/view/screen/onBoarding/loginScreen.dart';
 import 'package:angkor/src/view/screen/onBoarding/otpVerificationScreen.dart';
@@ -39,6 +41,14 @@ class AppRoutes {
     GetPage(
       name: RouteNames.distributorDetails,
       page: () => const DistributorDetails(),
+    ),
+    GetPage(
+      name: RouteNames.sellerInventory,
+      page: () => const SellerInventory(),
+    ),
+    GetPage(
+      name: RouteNames.customerHome,
+      page: () => const CustomerHome(),
     ),
   ];
 }
