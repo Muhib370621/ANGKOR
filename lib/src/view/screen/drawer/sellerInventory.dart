@@ -4,12 +4,9 @@ import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/core/utils/appTextStyle.dart';
 import 'package:angkor/src/view/blocks/sellerItemExpansionTile.dart';
 import 'package:angkor/src/view/component/angkorHeader.dart';
-import 'package:angkor/src/view/component/customExpansionTile.dart';
 import 'package:angkor/src/view/component/customIconContainer.dart';
-import 'package:angkor/src/view/component/customMenuItem.dart';
 import 'package:angkor/src/view/component/searchTextField.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -22,6 +19,7 @@ class SellerInventory extends StatelessWidget {
     Get.put(InventorySellerController());
     return Obx(() {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
             SizedBox(

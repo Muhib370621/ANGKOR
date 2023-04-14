@@ -28,7 +28,9 @@ class AngkorDrawer extends StatelessWidget {
             ),
           ),
         ),
-        height: loginController.selectedItem == "Seller"?54.h:60.h,
+        height:
+        // loginController.selectedItem == "Seller"?54.h:
+        100.h,
         width: 58.w,
         child: Drawer(
           backgroundColor: AppColors.mainGreyColor,
@@ -52,7 +54,7 @@ class AngkorDrawer extends StatelessWidget {
               Visibility(
                 visible: loginController.selectedItem !="Seller",
                 child: SizedBox(
-                  height: 32.h,
+                  height: 40.h,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -130,7 +132,7 @@ class AngkorDrawer extends StatelessWidget {
               Visibility(
                 visible: loginController.selectedItem == "Seller",
                 child: SizedBox(
-                  height: 27.h,
+                  height: 37.h,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

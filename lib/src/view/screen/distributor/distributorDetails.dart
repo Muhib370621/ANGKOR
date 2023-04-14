@@ -21,6 +21,7 @@ class DistributorDetails extends StatelessWidget {
         Get.put(DistributorDetailController());
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       // backgroundColor: AppColors.mainBlackColor,
       body: Stack(
         children: [

@@ -51,120 +51,133 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     final OTPVerificationController otpVerificationController =
         Get.put(OTPVerificationController());
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.mainBlackColor,
-      body: Center(
-        child: SizedBox(
-          width: 80.w,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 9.h,
-                ),
-                Text(
-                  "Please Verify That It's You",
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.mainHeading,
-                ),
-                SizedBox(
-                  height: 8.h,
-                ),
-                Text(
-                  "We have send you a code Via Email",
-                  style: TextStyle(
-                    fontSize: 16.5.sp,
-                    color: AppColors.pureWhite,
-                  ),
-                ),
-                SizedBox(
-                  height: 3.5.h,
-                ),
-                CustomTextField(
-                  controller: otpVerificationController.emailController.value,
-                  svgPath: AppAssets.emailIcon,
-                  hintText: 'Customer Email Address',
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Change my email",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      color: AppColors.pureWhite,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Text(
-                  "Timer",
-                  style: TextStyle(
-                    fontSize: 16.5.sp,
-                    color: AppColors.pureWhite,
-                  ),
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                Text(
-                  '$minutes:$seconds',
-                  style: TextStyle(
-                    fontSize: 24.sp,
-                    color: AppColors.mainColor,
-                  ),
-                ),
-                SizedBox(
-                  height: 4.5.h,
-                ),
-                CustomTextField(
-                  controller: otpVerificationController.otpController.value,
-                  svgPath: AppAssets.otpCodeIcon,
-                  hintText: 'OTP Code',
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                CustomActionButton(
-                  buttonText: 'Verify',
-                  backgroundColor: AppColors.mainColor,
-                  textColor: AppColors.mainBlackColor,
-                  onTap: () {
-                    // Get.toNamed(RouteNames.bottomNav);
-                  },
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                Text(
-                  "Haven't recieve any code?",
-                  style: TextStyle(
-                    fontSize: 19.sp,
-                    color: AppColors.pureWhite,
-                  ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                CustomMiniActionButton(
-                  borderColor: AppColors.mainColor,
-                  buttonText: 'Resend',
-                  backgroundColor: AppColors.mainBlackColor,
-                  textColor: AppColors.mainColor,
-                  onTap: () {
-                    // Get.toNamed(
-                    //   RouteNames.signUpScreen,
-                    // );
-                  },
-                ),
-              ],
+      body: Stack(
+        children: [
+          SizedBox(
+            height: 100.h,
+            width: 100.w,
+            child: Image.asset(
+              AppAssets.background,
+              fit: BoxFit.fitHeight,
             ),
           ),
-        ),
+          Center(
+            child: SizedBox(
+              width: 80.w,
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 9.h,
+                    ),
+                    Text(
+                      "Please Verify That It's You",
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.mainHeading,
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Text(
+                      "We have send you a code Via Email",
+                      style: TextStyle(
+                        fontSize: 16.5.sp,
+                        color: AppColors.pureWhite,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 3.5.h,
+                    ),
+                    CustomTextField(
+                      controller: otpVerificationController.emailController.value,
+                      svgPath: AppAssets.emailIcon,
+                      hintText: 'Customer Email Address',
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "Change my email",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          color: AppColors.pureWhite,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    Text(
+                      "Timer",
+                      style: TextStyle(
+                        fontSize: 16.5.sp,
+                        color: AppColors.pureWhite,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Text(
+                      '$minutes:$seconds',
+                      style: TextStyle(
+                        fontSize: 24.sp,
+                        color: AppColors.mainBlackColor,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4.5.h,
+                    ),
+                    CustomTextField(
+                      controller: otpVerificationController.otpController.value,
+                      svgPath: AppAssets.otpCodeIcon,
+                      hintText: 'OTP Code',
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    CustomActionButton(
+                      buttonText: 'Verify',
+                      backgroundColor: AppColors.mainColor,
+                      textColor: AppColors.mainBlackColor,
+                      onTap: () {
+                        // Get.toNamed(RouteNames.bottomNav);
+                      },
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Text(
+                      "Haven't recieve any code?",
+                      style: TextStyle(
+                        fontSize: 19.sp,
+                        color: AppColors.pureWhite,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    CustomMiniActionButton(
+                      borderColor: AppColors.mainColor,
+                      buttonText: 'Resend',
+                      backgroundColor: AppColors.mainBlackColor,
+                      textColor: AppColors.mainColor,
+                      onTap: () {
+                        // Get.toNamed(
+                        //   RouteNames.signUpScreen,
+                        // );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

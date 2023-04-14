@@ -72,8 +72,8 @@ class DashBoard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 25,
-                right: 145,
+                bottom: 3.2.h,
+                right: 40.w,
                 // top: 1,
                 child: Container(
                   height: 7.5.h,

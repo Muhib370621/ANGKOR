@@ -2,6 +2,7 @@ import 'package:angkor/src/core/utils/appAssets.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:angkor/src/view/screen/onBoarding/loginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class AppLoader extends StatefulWidget {
   const AppLoader({Key? key}) : super(key: key);
@@ -33,18 +34,31 @@ class _AppLoaderState extends State<AppLoader> {
           }
           return Scaffold(
             backgroundColor: AppColors.mainBlackColor,
-            body: Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 50.0,
-                vertical: 100,
-              ),
-              child: Align(
-                alignment: Alignment.center,
-                child: Image.asset(
-                  AppAssets.angkorSplashIcon,
-                  scale: 4,
+            body: Stack(
+              children: [
+                SizedBox(
+                  height: 100.h,
+                  width: 100.w,
+                  child: Image.asset(
+                    AppAssets.background,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
-              ),
+
+                Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 50.0,
+                    vertical: 100,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Image.asset(
+                      AppAssets.angkorSplashIcon,
+                      scale: 4,
+                    ),
+                  ),
+                ),
+              ],
             ),
           );
         }

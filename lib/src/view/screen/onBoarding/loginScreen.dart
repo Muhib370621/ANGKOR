@@ -20,15 +20,17 @@ class LoginScreen extends StatelessWidget {
     final LoginController loginController = Get.put(LoginController());
     return Scaffold(
       backgroundColor: AppColors.mainBlackColor,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          // SizedBox(
-          //   height: 100.h,
-          //   child: Image.asset(
-          //     AppAssets.background,
-          //     fit: BoxFit.fitHeight,
-          //   ),
-          // ),
+          SizedBox(
+            height: 100.h,
+            width: 100.w,
+            child: Image.asset(
+              AppAssets.background,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
           Center(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),

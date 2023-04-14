@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Get.put(HomeScreenController());
     final LoginController loginController = Get.put(LoginController());
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       drawer: const AngkorDrawer(),
       body: Stack(
         // fit: StackFit.expand,
@@ -581,8 +582,49 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                               SizedBox(
-                                height: 12.h,
-                              )
+                                height: 3.h,
+                              ),
+                              Text(
+                                "Recent Tutorials",
+                                style: AppTextStyles.mainHeading,
+                              ),
+                              SizedBox(
+                                height: 3.h,
+                              ),
+                              Visibility(
+                                visible: loginController.selectedItem == "Distributor",
+                                child: SizedBox(
+                                  height: 10.h,
+                                  child: ListView(
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.horizontal,
+                                    // padding: const EdgeInsets.symmetric(horizontal: 15),
+                                    physics: const BouncingScrollPhysics(),
+                                    children: [
+                                      const TutorialContainer(),
+                                      SizedBox(
+                                        width: 2.5.w,
+                                      ),
+                                      const TutorialContainer(),
+                                      SizedBox(
+                                        width: 2.5.w,
+                                      ),
+                                      const TutorialContainer(),
+                                      SizedBox(
+                                        width: 2.5.w,
+                                      ),
+                                      const TutorialContainer(),
+                                      SizedBox(
+                                        width: 2.5.w,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 13.h,
+                              ),
+
                             ],
                           ),
                         ],

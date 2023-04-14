@@ -17,6 +17,7 @@ class ManageUsers extends StatelessWidget {
     final ManageUserController manageUserController =
         Get.put(ManageUserController());
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           SizedBox(
