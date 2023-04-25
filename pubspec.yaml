@@ -38,6 +38,7 @@ dependencies:
   easy_localization: ^3.0.1
   flutter_svg: ^2.0.4
   lottie: ^2.3.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

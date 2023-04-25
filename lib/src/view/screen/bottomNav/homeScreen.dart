@@ -19,7 +19,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../component/tutorialContent.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,7 +28,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String _selectedItem = "1 Day";
 
-  List<String> _items = [
+  final List<String> _items = [
     "1 Day",
     "1 Week",
     "1 Month",
@@ -261,6 +261,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                 ],
               ),
             ),
@@ -450,14 +453,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Dashboard",
                                     style: AppTextStyles.mainHeading,
                                   ),
                                   Visibility(
-                                    visible: loginController.selectedItem == "Seller",
+                                    visible: loginController.selectedItem ==
+                                        "Seller",
                                     child: Text(
                                       "Statistic Report",
                                       style: TextStyle(
@@ -592,7 +597,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 3.h,
                               ),
                               Visibility(
-                                visible: loginController.selectedItem == "Distributor",
+                                visible: loginController.selectedItem ==
+                                    "Distributor",
                                 child: SizedBox(
                                   height: 10.h,
                                   child: ListView(
@@ -624,7 +630,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(
                                 height: 13.h,
                               ),
-
                             ],
                           ),
                         ],

@@ -8,12 +8,15 @@ import 'package:angkor/src/view/component/customActionButton.dart';
 import 'package:angkor/src/view/component/customMiniActionButton.dart';
 import 'package:angkor/src/view/component/customtextField.dart';
 import 'package:angkor/src/view/component/socialButton.dart';
+import 'package:angkor/src/view/prompts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
+
+  // final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -93,8 +96,7 @@ class LoginScreen extends StatelessWidget {
                     backgroundColor: AppColors.mainColor,
                     textColor: AppColors.mainBlackColor,
                     onTap: () {
-
-                      Get.toNamed(RouteNames.bottomNav);
+                     loginController.valid();
                     },
                   ),
                   SizedBox(
@@ -140,8 +142,8 @@ class LoginScreen extends StatelessWidget {
                     textColor: AppColors.mainColor,
                     onTap: () {
                       Get.toNamed(
-                              RouteNames.signUpScreen,
-                            );
+                        RouteNames.signUpScreen,
+                      );
                     },
                   ),
                 ],

@@ -1,6 +1,8 @@
+import 'package:angkor/src/controller/loginController.dart';
 import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -15,10 +17,21 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController loginController = Get.put(LoginController());
     return TextFormField(
+      validator: (value) {
+        if (value!.isEmpty ) {
+          loginController.isValid.value="empty fields";
+        }
+        if(!value.contains('@')){
+        loginController.isValid.value="Invalid Email";}
+        else{
+          loginController.isValid.value="correct";
+        }
+        return null;
+      },
       controller: controller,
       style: const TextStyle(color: AppColors.pureWhite),
-
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           enabledBorder: OutlineInputBorder(
