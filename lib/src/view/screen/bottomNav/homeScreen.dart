@@ -269,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Visibility(
-            visible: loginController.selectedItem == "Chef Admin",
+            visible: loginController.selectedItem == "chef",
             child: Column(
               children: [
                 SizedBox(

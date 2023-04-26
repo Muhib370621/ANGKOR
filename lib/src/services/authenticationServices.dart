@@ -7,15 +7,10 @@ class AuthenticationServices {
   Future<LoginModel> login(String email, String password, String type) async {
     String url = UrlSchemes.baseUrlDev + UrlSchemes.login;
 
-    var data = {
-      "email": email,
-      "password": password,
-      "type":type
-    };
+    var data = {"email": email, "password": password, "type": type};
 
     /// Request
-    var response = await http.post(Uri.parse(url),
-        headers: {'Content-Type': 'application/json'}, body: data);
+    var response = await http.post(Uri.parse(url), body: data);
 
     if (kDebugMode) {
       print("Called API: $url");

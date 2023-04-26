@@ -64,4 +64,32 @@ class Prompts {
       ),
     );
   }
+  static showSuccess(String title, String middleText) {
+    return Get.snackbar(
+      title,
+      '',
+      duration: const Duration(seconds: 4),
+      snackPosition: SnackPosition.BOTTOM,
+      // margin: const EdgeInsets.all(25),
+      backgroundColor: Colors.greenAccent.withOpacity(
+        0.3,
+      ),
+      colorText: Colors.white,
+      titleText: Text(
+        title,
+        style: TextStyle(
+          fontSize: 20.sp,
+          color: Colors.white,
+        ),
+      ),
+      messageText: Text(
+        middleText,
+        style: TextStyle(
+          fontSize: 16.sp,
+          color: Colors.white,
+        ), // set the font size of the message
+      ),
+      icon: Lottie.asset(AppAssets.successIcon),
+    );
+  }
 }

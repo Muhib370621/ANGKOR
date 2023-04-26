@@ -61,4 +61,5 @@ class AppAssets{
 ///~~~~~~~~~~animations~~~~~~~~~~~~///
   static const roleIcon = "$_animationPath/role.json";
   static const errorIcon = "$_animationPath/errorIcon.json";
+  static const successIcon = "$_animationPath/successIcon.json";
 }

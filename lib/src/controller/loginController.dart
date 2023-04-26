@@ -16,7 +16,7 @@ class LoginController extends GetxController {
 
   List<String> items = [
     "Super Admin",
-    "Chef Admin",
+    "chef",
     "Distributor",
     "Seller",
     "Customer",
@@ -29,18 +29,24 @@ class LoginController extends GetxController {
     } else if (!usernameController.value.text.contains('@')) {
       Prompts.showError("Oops!", "Enter Valid Email Please!");
     } else {
-      Get.toNamed(RouteNames.bottomNav);
+      login(usernameController.value.text, emailController.value.text,
+          selectedItem);
     }
   }
 
-  Future<LoginModel> login(String email , String pass,String type) async {
-    isLoading.value=true;
-    var result = await AuthenticationServices().login(email, pass,type);
+  Future<LoginModel> login(String email, String pass, String type) async {
+    isLoading.value = true;
+    var result = await AuthenticationServices().login(email, pass, type);
     // check.value = result;
-    result.response.status = loginMessage.value;
-    isLoading.value=false;
+    loginMessage.value = result.response!.status!;
+    print("login message${loginMessage.value}");
+    if (loginMessage.value == "true") {
+      Prompts.showSuccess("Great!", "Successfully Logged In");
+      Get.toNamed(RouteNames.bottomNav);
+    } else {
+      Prompts.showError("Oops!", "Wrong Credentials!");
+    }
+    isLoading.value = false;
     return result;
-
   }
-
 }

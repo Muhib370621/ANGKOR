@@ -1,3 +1,4 @@
+import 'package:angkor/src/core/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -7,11 +8,13 @@ class CustomActionButton extends StatelessWidget {
       this.backgroundColor,
       this.textColor,
       required this.buttonText,
-      this.onTap})
+      this.onTap,
+       this.progressIndicator})
       : super(key: key);
   final Color? backgroundColor;
   final Color? textColor;
   final String buttonText;
+  final bool? progressIndicator;
   final void Function()? onTap;
 
   @override
@@ -30,14 +33,15 @@ class CustomActionButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
+          child: progressIndicator==false?Text(
             buttonText,
             style: TextStyle(
               fontSize: 21.sp,
               fontWeight: FontWeight.w700,
               color: textColor,
             ),
-          ),
+          ):
+          const CircularProgressIndicator(color: AppColors.mainBlackColor,),
         ),
       ),
     );

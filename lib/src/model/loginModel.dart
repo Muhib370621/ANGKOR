@@ -13,14 +13,14 @@ class LoginModel {
     required this.response,
   });
 
-  Response response;
+  Response? response;
 
   factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
     response: Response.fromJson(json["response"]),
   );
 
   Map<String, dynamic> toJson() => {
-    "response": response.toJson(),
+    "response": response?.toJson(),
   };
 }
 
@@ -31,9 +31,9 @@ class Response {
     required this.id,
   });
 
-  String status;
-  String message;
-  String id;
+  String? status;
+  String? message;
+  String? id;
 
   factory Response.fromJson(Map<String, dynamic> json) => Response(
     status: json["status"],

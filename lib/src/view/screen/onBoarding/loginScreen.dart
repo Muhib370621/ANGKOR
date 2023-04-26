@@ -91,14 +91,17 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 3.h,
                   ),
-                  CustomActionButton(
-                    buttonText: 'Log in',
-                    backgroundColor: AppColors.mainColor,
-                    textColor: AppColors.mainBlackColor,
-                    onTap: () {
-                     loginController.valid();
-                    },
-                  ),
+                  Obx(() {
+                    return CustomActionButton(
+                      progressIndicator: loginController.isLoading.value,
+                      buttonText: 'Log in',
+                      backgroundColor: AppColors.mainColor,
+                      textColor: AppColors.mainBlackColor,
+                      onTap: () {
+                        loginController.valid();
+                      },
+                    );
+                  }),
                   SizedBox(
                     height: 6.h,
                   ),
